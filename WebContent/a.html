@@ -8,13 +8,12 @@ function save()
 {
  var username = document.getElementById("username").value;
  localStorage.setItem("username", username);
- 
 }
 </script>
 </head>
 <body>
 <form action="b.html" onsubmit="save()">
-<input id="username" />
+<input type="text" id="username" />
 <input type="submit" />
 </form>
 </body>
