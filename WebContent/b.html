@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function read()
+{
+	var username =localStorage.getItem("username");
+	var us = document.querySelector("#use");
+	us.value=username;
+}
+</script>
+</head>
+<body onload="read()">
+<input id="use" />
+</body>
+</html>

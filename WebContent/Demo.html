@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>第一次考试！</title>
+<link rel="stylesheet" href="css/bootstrap.css" />
+<link rel="stylesheet" href="css/style.css" />
+<script type="text/javascript" src="js/javascript.js"></script>
+</head>
+<body onload="createCode()">
+	<form action="result.html" method="post" onsubmit="return validateForm();">
+		<div id="div1">
+			<div id="div2">
+				<ol>
+					<li>带*号为必填项。</li>
+					<li>用户名允许使用中文，长度不能超过16个字节。</li>
+					<li>用户密码限制为4-20字节，不能包含中文。</li>
+					<li>超过三个月未登陆账户会自动删除。</li>
+					<li>密码提示和提示答案填写后不可修改，请牢记。</li>
+					<li>我们承诺不发送任何与我们经营业务不相关的内容给您。</li>
+				</ol>
+			</div>
+
+			<div class="container" id="div3">
+				<div class="row" style="margin-top: 3px">
+
+					<div class="col-md-2" style="text-align: right">
+						<label for="username">用戶名：</label>
+					</div>
+					<div class="col-md-3" style="text-align: right">
+						<input type="text" id="username" onchange="judgeUserName();"
+							required="required" onclick="userClick()"/>
+					</div>
+					<div class="col-md-7">
+						<span id="sp1">*&nbsp;检测是否可用</span>
+					</div>
+
+				</div>
+				<div class="row" style="margin-top: 3px">
+
+					<div class="col-md-2" style="text-align: right">
+						<label for="password">密码：</label>
+					</div>
+					<div class="col-md-3" style="text-align: right">
+						<input type="password" id="pwd" onchange="judgePwd()"
+							required="required" onclick="judgePwd2()"/>
+					</div>
+					<div class="col-md-7 ">
+						<span id="pwd1">*</span>
+					</div>
+
+				</div>
+				<div class="row" style="margin-top: 3px">
+
+					<div class="col-md-2" style="text-align: right">
+						<label for="repwd">确认密码：</label>
+					</div>
+					<div class="col-md-3" style="text-align: right">
+						<input type="password" id="repwd" onchange="judgePwd1()" onclick="pwdClick()" required="required"/>
+					</div>
+					<div class="col-md-7 ">
+						<span id="repwd1">*</span>
+					</div>
+
+				</div>
+				<div class="row" style="margin-top: 3px">
+
+					<div class="col-md-2" style="text-align: right">
+						<label for="tishi">密码提示：</label>
+					</div>
+					<div class="col-md-3" style="text-align: right">
+						<input type="text" id="tishi" required="required" />
+					</div>
+					<div class="col-md-7 ">
+						<span>*<a href="http://www.baidu.com"
+							style="text-decoration: none">&nbsp;当你忘记密码时可通过此问题找回</a><span>,注册后将无法修改</span></span>
+					</div>
+
+				</div>
+				<div class="row" style="margin-top: 3px">
+
+					<div class="col-md-2" style="text-align: right" id="answer">
+						<label for="tishidaan">提示答案：</label>
+					</div>
+					<div class="col-md-3" style="text-align: right">
+						<input type="text" id="tishidaan" required="required" />
+					</div>
+					<div class="col-md-7 ">
+						<span>*&nbsp;注册后将无法修改</span>
+					</div>
+
+				</div>
+				<div class="row" style="margin-top: 3px">
+
+					<div class="col-md-2" style="text-align: right">
+						<label for="xm">姓名：</label>
+					</div>
+					<div class="col-md-3" style="text-align: right">
+						<input type="text" id="xm" />
+					</div>
+					<div class="col-md-7 ">
+						<span></span>
+					</div>
+
+				</div>
+				<div class="row" style="margin-top: 3px">
+
+					<div class="col-md-2" style="text-align: right">
+						<label for="email">电子邮件：</label>
+					</div>
+					<div class="col-md-3" style="text-align: right">
+						<input type="email" id="email" required="required" />
+					</div>
+					<div class="col-md-7 ">
+						<span>*</span>
+					</div>
+
+				</div>
+				<div class="row" style="margin-top: 3px">
+
+					<div class="col-md-2" style="text-align: right">
+						<label for="url">个人网站：</label>
+					</div>
+					<div class="col-md-3" style="text-align: right">
+						<input type="url" id="url" />
+					</div>
+					<div class="col-md-7 ">
+						<span></span>
+					</div>
+
+				</div>
+				<div class="row" style="margin-top: 3px">
+
+					<div class="col-md-2" style="text-align: right">
+						<label for="m">性别：</label>
+					</div>
+					<div class="col-md-3" style="text-align: right">
+						<input type="radio" name="gender" id="m" value="男" /><label
+							for="m">男</label>&nbsp;&nbsp;&nbsp; <input type="radio"
+							name="gender" id="f" value="女" /><label for="f">女</label>&nbsp;&nbsp;&nbsp;
+						<input type="radio" name="gender" id="x" value="保密" /><label
+							for="x">保密</label>
+					</div>
+					<div class="col-md-7 ">
+						<span></span>
+					</div>
+				</div>
+				<div class="row" style="margin-top: 3px">
+
+					<div class="col-md-2" style="text-align: right">
+						<label for="address">所在省份：</label>
+					</div>
+					<div class="col-md-3" style="text-align: right">
+						<input type="text" id="address" list="datals" placeholder="请选择或输入" />
+						<datalist id="datals">
+							<option>北京</option>
+							<option>四川</option>
+							<option>重庆</option>
+							<option>广州</option>
+							<option>上海</option>
+							<option>广西</option>
+						</datalist>
+					</div>
+					<div class="col-md-7 ">
+						<span></span>
+					</div>
+
+				</div>
+				<div class="row" style="margin-top: 3px">
+
+					<div class="col-md-2" style="text-align: right">
+						<label for="city">所在城市：</label>
+					</div>
+					<div class="col-md-3" style="text-align: right">
+						<input type="text" id="city" list="datals2" placeholder="请选择或输入" />
+						<datalist id="datals2">
+							<option>北京</option>
+							<option>四川</option>
+							<option>重庆</option>
+							<option>广州</option>
+							<option>上海</option>
+							<option>广西</option>
+						</datalist>
+					</div>
+					<div class="col-md-7 ">
+						<span></span>
+					</div>
+
+				</div>
+				<div class="row" style="margin-top: 3px">
+
+					<div class="col-md-2" style="text-align: right">
+						<label for="qm">QQ/MSN：</label>
+					</div>
+					<div class="col-md-3" style="text-align: right">
+						<input type="number" id="qm" />
+					</div>
+					<div class="col-md-7 ">
+						<span></span>
+					</div>
+
+				</div>
+				<div class="row" style="margin-top: 3px">
+
+					<div class="col-md-2" style="text-align: right">
+						<label for="date">生日：</label>
+					</div>
+					<div class="col-md-3" style="text-align: right">
+						<input type="date" style="width: 175px" id="date">
+					</div>
+					<div class="col-md-7 ">
+						<span></span>
+					</div>
+
+				</div>
+				<div class="row" style="margin-top: 3px">
+
+					<div class="col-md-2" style="text-align: right">
+						<label for="man">推荐人：</label>
+					</div>
+					<div class="col-md-3" style="text-align: right">
+						<input type="text" id="man" />
+					</div>
+					<div class="col-md-7 ">
+						<span></span>
+					</div>
+
+				</div>
+				
+				
+				<div class="row" style="margin-top: 3px">
+
+					<div class="col-md-2" style="text-align: right">
+						<label for="yz">验证码：</label>
+					</div>
+					<div class="col-md-3" style="text-align: right">
+						<input type="text" id="yz"/>
+					</div>
+					<div class="col-md-1 ">
+						<input id="yzsz" type="button" />
+					</div>
+					<div class="col-md-2 ">
+						<input id="yzjg"/>
+					</div>
+					<div class="col-md-1 ">
+						<input type="button" onclick="createCode()" value="看不清" style="text-align: left"/>
+					</div>
+						<div class="col-md-3 ">
+					
+					</div>
+				</div>
+				
+				
+				
+				<div class="row" style="margin-top: 3px">
+
+					<div class="col-md-2"></div>
+					<div class="col-md-3">
+						<input type="submit" value="注册"/>
+					</div>
+					<div class="col-md-2">
+						<input type="reset" value="清除" onclick="clearData()"/>
+					</div>
+					<div class="col-md-5"></div>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

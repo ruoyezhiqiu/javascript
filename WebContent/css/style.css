@@ -1,0 +1,39 @@
+@charset "UTF-8";
+#div1 {
+	border:0px double #800080;
+	margin-top: 20px;
+	width: 80%;
+	margin-left: 10%;
+	height: 700px;
+}
+
+#div2 {
+	border:0px thin green;
+	margin-top: 10px;
+	width: 80%;
+	margin-left: 10%;
+	height: 150px;
+}
+
+#div3 {
+	border:0px thin green;
+	margin-top: 5px;
+	width: 90%;
+	margin-left: 5%;
+	height: 480px;
+}
+#yzsz{
+	width:70px; 
+	height:30px;
+	color:green;
+	text-align:center;
+	border:2px solid purple;
+	border-radius:2px;
+	background-color:#ccc;
+}
+#yzjg{
+	border:0px;
+	width:140px;
+	color:red;
+	
+}

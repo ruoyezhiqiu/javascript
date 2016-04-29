@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+function save()
+{
+ var username = document.getElementById("username").value;
+ localStorage.setItem("username", username);
+ 
+}
+</script>
+</head>
+<body>
+<form action="b.html" onsubmit="save()">
+<input id="username" />
+<input type="submit" />
+</form>
+</body>
+</html>
